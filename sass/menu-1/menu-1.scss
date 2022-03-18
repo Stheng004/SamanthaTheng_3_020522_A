@@ -1,0 +1,40 @@
+$breakpoints: (
+    desktop: 1700px,
+    mobile: 599px,
+    tablet: 850px
+); 
+
+$main-background: #F8F8F8;
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+
+@mixin desktop-only {
+    @media screen and (max-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+.header {
+    padding: 2rem;
+    display: flex;
+    &--back-key {
+        font-size: 26px;
+    }
+    &--omf-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
