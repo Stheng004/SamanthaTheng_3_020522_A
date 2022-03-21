@@ -35,6 +35,9 @@ $icon: (
 );
 
 $gradient: $secondary, $primary;
+$easing: cubic-bezier(.49,.18,.23,1);
+
+
 
 @mixin desktop1-only {
     @media screen and (max-width: map-get($breakpoints, desktop1)) {
@@ -94,8 +97,47 @@ $gradient: $secondary, $primary;
     border-left-style: none;
     height: 1px;
     margin-top: -5%;
-    width: 14%;
-    margin-left: 5%;
+    width: 12%;
+    margin-left: 2%;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(75px);
+    }
+    100% {
+        transform: translate(0px);
+    }
+}
+
+@keyframes cost-slide {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translate(-75px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    20% {
+        transform: rotate(210deg);
+    }
+    40% {
+        transform: rotate(240deg);
+    }
+    60% {
+        transform: rotate(270deg);
+    }
+    80% {
+        transform: rotate(300deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .header {
@@ -164,12 +206,15 @@ $gradient: $secondary, $primary;
             font-size: 30px;
         }   
     }
-    &--heart-icon {
-        font-size: map-get($icon, heart);
+}
+
+.heart-container {
+    &--heart {
         padding-top: 45px;
-        @include mobile-only {
-            font-size: 28px;
-            padding-top: 20px;
+        font-size: map-get($icon, heart);
+        cursor: pointer;
+        &:hover {
+            color: red;
         }
     }
 }
@@ -202,6 +247,22 @@ $gradient: $secondary, $primary;
 
 .underline {
     @include underline;
+    @include desktop1-only {
+        width: 60px;
+        margin-left: 2%;
+    }
+    @include desktop2-only {
+        width: 65px;
+        margin-left: 2%;
+    }
+    @include tablet-only {
+        width: 66px;
+        margin-left: 3%;
+    }
+    @include mobile-only {
+        width: 52px;
+        margin-left: 5%;
+    }
 }
 
 .menu {
@@ -264,19 +325,29 @@ $gradient: $secondary, $primary;
         }
     }
     &--card {
+        cursor: pointer;
         padding: 3px;
+        height: 89px;
         @include card-border;
         @include shadow;
         background-color: white;
-        &:hover{
+        overflow: hidden;
+        &:hover {
             @include btn-hover;
+            & .menu--hover {
+                visibility: visible;
+                animation: slide-in 700ms ease-in;
+            }
+            & .cost {
+                animation: cost-slide 700ms ease-in;
+            }
         }
     }
     &--content {
         margin: map-get($margin, list2);
         display: flex;
-        justify-content: space-between;
         font-weight: 100;
+        justify-content: space-between;
         font-size: map-get($font, dish-content);
         @include tablet-only {
             margin: map-get($margin, list5);
@@ -285,6 +356,30 @@ $gradient: $secondary, $primary;
             margin: map-get($margin, list2);
             font-size: 13.5px;
         }
+    }
+    &--hover{
+        background-color: $tertiary;
+        width: 15%;
+        margin-top: -90px;
+        margin-right: -3px;
+        height: 95px;
+        padding: 0;
+        text-align: center;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        float: right;
+        @include shadow;
+        visibility: hidden;
+    }
+    &--check-icon {
+        display: inline-block;
+        margin-top: 40%;
+        background-color: white;
+        color: $tertiary;
+        padding: 5px 7px 3px 7px;
+        border-radius: 5rem;
+        height: 20px;
+        transform: rotate(180deg);
     }
 }
 
