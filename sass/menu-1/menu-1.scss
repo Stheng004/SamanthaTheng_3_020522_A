@@ -32,6 +32,7 @@ $margin: (
 
 $icon: (
     heart: 36px,
+    heart2: 26px
 );
 
 $gradient: $secondary, $primary;
@@ -110,6 +111,16 @@ $easing: cubic-bezier(.49,.18,.23,1);
     }
 }
 
+@keyframes content-slide {
+    0% {
+        transform: translate(0px);
+
+    }
+    100%  {
+        transform: scaleX(500px);
+    }
+}
+
 @keyframes cost-slide {
     0% {
         transform: translateX(0px);
@@ -120,23 +131,41 @@ $easing: cubic-bezier(.49,.18,.23,1);
 }
 
 @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to {transform: rotate(450deg); }
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slide-out {
+    from{  
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(500%);
+  }
+}
+
+@keyframes cost-slide-out {
+    from{  
+    transform: translateX(-75px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes load-menu {
     0% {
-        transform: rotate(180deg);
-    }
-    20% {
-        transform: rotate(210deg);
-    }
-    40% {
-        transform: rotate(240deg);
-    }
-    60% {
-        transform: rotate(270deg);
-    }
-    80% {
-        transform: rotate(300deg);
+        transform: translateY(20%);
+        opacity: 0;
     }
     100% {
-        transform: rotate(360deg);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -210,12 +239,34 @@ $easing: cubic-bezier(.49,.18,.23,1);
 
 .heart-container {
     &--heart {
-        padding-top: 45px;
+        height: 35px;
+        margin-top: 45px;
+        padding-right: 2px;
         font-size: map-get($icon, heart);
         cursor: pointer;
-        &:hover {
-            color: red;
+        @include mobile-only {
+            font-size: map-get($icon, heart2);
+            margin-top: 25px;
+            margin-right: 20px;
         }
+    }
+    
+}
+
+
+.heart-f {
+    opacity: 0;
+    @include gradient(top, $gradient);
+    background-clip: text;
+    color: transparent;
+    margin-left: -35.75px;
+    position: absolute;
+    &:hover {
+        animation: fadein 1500ms;
+    }
+    @include mobile-only {
+        position: absolute;
+        margin-left: -26px;
     }
 }
 
@@ -323,6 +374,10 @@ $easing: cubic-bezier(.49,.18,.23,1);
             margin: map-get($margin, list7);
             height: 75%;
         }
+        @include mobile-only {
+        height: 80%;
+        gap: 15px; 
+        }
     }
     &--card {
         cursor: pointer;
@@ -332,14 +387,33 @@ $easing: cubic-bezier(.49,.18,.23,1);
         @include shadow;
         background-color: white;
         overflow: hidden;
+        animation: load-menu 1500ms;
         &:hover {
             @include btn-hover;
             & .menu--hover {
                 visibility: visible;
                 animation: slide-in 700ms ease-in;
+                animation-fill-mode: forwards;
+            }
+            & .menu--check-icon {
+                animation: rotate 700ms ease-in;
             }
             & .cost {
                 animation: cost-slide 700ms ease-in;
+                animation-fill-mode: forwards;
+            }
+        }
+        @include desktop1-only {
+            &:hover {
+                & .menu--content {
+                    & .hover-hide {
+                        display: none;
+                    }
+                    & .hover-show {
+                        display: block;
+                        position: relative;
+                    }
+                }
             }
         }
     }
@@ -354,12 +428,12 @@ $easing: cubic-bezier(.49,.18,.23,1);
         }
         @include mobile-only {
             margin: map-get($margin, list2);
-            font-size: 13.5px;
+            font-size: 15px;
         }
     }
     &--hover{
         background-color: $tertiary;
-        width: 15%;
+        width: 15.5%;
         margin-top: -90px;
         margin-right: -3px;
         height: 95px;
@@ -370,6 +444,17 @@ $easing: cubic-bezier(.49,.18,.23,1);
         float: right;
         @include shadow;
         visibility: hidden;
+        animation: slide-out 1000ms ease-in;
+        @include desktop1-only {
+            margin-right: -5px;
+        }
+        @include tablet-only {
+            width: 12%;
+        }
+        @include mobile-only {
+            height: 110px;
+            width: 15.5%;
+        }
     }
     &--check-icon {
         display: inline-block;
@@ -379,8 +464,25 @@ $easing: cubic-bezier(.49,.18,.23,1);
         padding: 5px 7px 3px 7px;
         border-radius: 5rem;
         height: 20px;
-        transform: rotate(180deg);
+        @include desktop1-only {
+            margin-top: 50%;
+        }
+        @include desktop2-only {
+            margin-top: 40%;
+        }
+        @include mobile-only {
+            margin-top: 70%;
+        }
     }
+}
+
+.hover-show {
+    position: absolute;
+    display: none;
+}
+
+.cost {
+    animation: cost-slide-out 400ms ease-in;
 }
 
 .order {
@@ -406,11 +508,11 @@ $easing: cubic-bezier(.49,.18,.23,1);
 .footer {
     width: 100%;
     background-color: darken($main-background, 75%);
-    height: 250px;
+    height: 255px;
     font-family: 'Roboto', sans-serif;
     color: white;
     @include mobile-only {
-        height: 200px;
+        height: 205px;
     }
     &--logo {
         width: 145px;
