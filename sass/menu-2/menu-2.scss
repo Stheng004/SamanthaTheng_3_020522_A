@@ -184,6 +184,11 @@ $easing: cubic-bezier(.49,.18,.23,1);
     }
 }
 
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
 .main-container {
     &--img {
         width: 100%;
@@ -230,6 +235,8 @@ $easing: cubic-bezier(.49,.18,.23,1);
         margin: 0% 5% 0% 5%;
     }
     &--restaurant {
+        font-family: 'Shrikhand', cursive;
+        font-weight: 100;
         font-size: map-get($font, title);
         @include mobile-only {
             font-size: 30px;
@@ -367,16 +374,36 @@ $easing: cubic-bezier(.49,.18,.23,1);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include desktop2-only {
+            height: 140%;
+        }
         @include tablet-only {
             margin: map-get($margin, list4);
+            height: 140%;
         }
         @include mobile-only {
             margin: map-get($margin, list7);
-            height: 75%;
+            height: 100%;
+            gap: 15px; 
+        }
+    }
+    &--container2 {
+        margin: map-get($margin, list1);
+        height: 53%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include desktop2-only {
+            height: 100%;
+        }
+        @include tablet-only {
+            margin: map-get($margin, list4);
+            height: 100%;
         }
         @include mobile-only {
-        height: 80%;
-        gap: 15px; 
+            margin: map-get($margin, list7);
+            height: 80%;
+            gap: 15px; 
         }
     }
     &--card {
@@ -397,6 +424,9 @@ $easing: cubic-bezier(.49,.18,.23,1);
             }
             & .menu--check-icon {
                 animation: rotate 700ms ease-in;
+                @include mobile-only {
+                    animation: rotate 800ms ease-in;
+                }
             }
             & .cost {
                 animation: cost-slide 700ms ease-in;
@@ -471,8 +501,21 @@ $easing: cubic-bezier(.49,.18,.23,1);
             margin-top: 40%;
         }
         @include mobile-only {
-            margin-top: 70%;
+            margin-top: 75%;
         }
+    }
+}
+
+.menu:nth-child(1) {
+        margin-bottom: 15%;
+    @include desktop2-only {
+        margin-bottom: 35%;
+    }
+    @include tablet-only {
+        margin-bottom: 30%;
+    }
+    @include mobile-only {
+        margin-bottom: 15%;
     }
 }
 
@@ -556,3 +599,7 @@ $easing: cubic-bezier(.49,.18,.23,1);
     }
 }
 
+.footer a {
+    text-decoration: none;
+    color: white;
+}

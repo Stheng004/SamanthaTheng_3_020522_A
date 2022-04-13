@@ -184,6 +184,11 @@ $easing: cubic-bezier(.49,.18,.23,1);
     }
 }
 
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
 .main-container {
     &--img {
         width: 100%;
@@ -397,6 +402,9 @@ $easing: cubic-bezier(.49,.18,.23,1);
             }
             & .menu--check-icon {
                 animation: rotate 700ms ease-in;
+                @include mobile-only {
+                    animation: rotate 800ms ease-in;
+                }
             }
             & .cost {
                 animation: cost-slide 700ms ease-in;
@@ -471,7 +479,7 @@ $easing: cubic-bezier(.49,.18,.23,1);
             margin-top: 40%;
         }
         @include mobile-only {
-            margin-top: 70%;
+            margin-top: 75%;
         }
     }
 }
@@ -556,3 +564,7 @@ $easing: cubic-bezier(.49,.18,.23,1);
     }
 }
 
+.footer a {
+    text-decoration: none;
+    color: white;
+}

@@ -307,27 +307,26 @@ $gradient: $secondary, $primary;
     }
 }
 
+.food a {
+    text-decoration: none;
+    color: black;
+}
 .heart-f {
     opacity: 0;
-    color: $secondary;
     @include gradient(top, $gradient);
     background-clip: text;
     color: transparent;
-    margin-left: -200px;
+    margin-left: -26.5px;
+    margin-top: 1px;
     position: absolute;
     &:hover {
         animation: fadein 1500ms;
     }
     @include mobile-only {
         position: absolute;
-        margin-left: -26px;
+        margin-left: -22px;
     }
 }
-
-.heart-o {
-    color: red;
-}
-
 
 .footer {
     background-color: darken($main-background, 75%);
@@ -370,4 +369,9 @@ $gradient: $secondary, $primary;
             padding-left: 5%;
             }
     }
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
 }
