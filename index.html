@@ -9,129 +9,135 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="normalize/normalize.css"/>
-        <link rel="stylesheet" href=".css/main/style.css"/> 
+        <link rel="stylesheet" href="css/main/style.css"/> 
     </head>
 
 
     <body>
-        <header>
-            <img src="images/ohmyfood@2x.svg" class="omf-logo" alt="ohmyfood" title="ohmyfood">
-        </header>
-
-        <div class="location">
-            <div class="location--icon">
-                <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <h3 class="location--text">Paris, Belleville</h3>
+        <div class="pre-loader-box">
+            <div class="pre-loader"></div>
         </div>
+        
+        <div class="loading-content">
+            <header>
+                <img src="images/ohmyfood@2x.svg" class="omf-logo" alt="ohmyfood" title="ohmyfood">
+            </header>
 
-        <div class="intro">
-            <div class="intro--text">
-                <h1>Book the menu you like</h1>
-                <h2>Discover top-of-the-art restaurants we <br> picked for you</h2>
+            <div class="location">
+                <div class="location--icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3 class="location--text">Paris, Belleville</h3>
             </div>
-            <div class="explore-btn">Explore our restaurants</div>
+
+            <div class="intro">
+                <div class="intro--text">
+                    <h1>Book the menu you like</h1>
+                    <h2>Discover top-of-the-art restaurants we <br> picked for you</h2>
+                </div>
+                <div class="explore-btn">Explore our restaurants</div>
+            </div>
+
+            <section class="nav">
+                <h1>How it works</h1>
+                <div class="nav--container">
+                    <div class="nav--btn">
+                        <p class="nav--number">1</p>
+                        <div class="nav--icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <p class="nav--text">Choose a restaurant</p>
+                    </div>
+                    <div class='nav--btn'>
+                        <p class="nav--number">2</p>
+                        <div class="nav--icon">
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+                        <p class="nav--text">Create your menu</p>
+                    </div>
+                    <div class='nav--btn'>
+                        <p class="nav--number">3</p>
+                        <div class="nav--icon">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <p class="nav--text">Go enjoy it at the restaurant</p>
+                    </div>
+                </div>
+            </section>
+                
+            <section class="food">
+                <h1>Restaurants</h1>
+                <div class="food--container">
+                    <a href="menu-1.html"><div class="food--card">
+                        <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="food--img" alt="The Full Palette" title="The Full Palette">
+                        <div class="food--content">
+                            <div class="food--text">
+                                <h3>The Full Palette</h3>
+                                <p>New York</p>
+                            </div>
+                            <div class="food--heart-icon">
+                                <i class="far fa-heart heart-o"></i>
+                                <i class="fas fa-heart heart-f"></i>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="menu-2.html"><div class="food--card">
+                        <img src="images/stil-u2Lp8tXIcjw-unsplash.jpg" class="food--img" alt="The Enchanted Plate" title="The Enchanted Plate">
+                        <div class="food--content">
+                            <div class="food--text">
+                                <h3>The Enchanted Plate</h3>
+                                <p>New York</p>
+                            </div>
+                            <div class="food--heart-icon">
+                                <i class="far fa-heart heart-o"></i>
+                                <i class="fas fa-heart heart-f"></i>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="menu-3.html"><div class="food--card">
+                        <img src="images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" class="food--img" alt="Bastille" title="Bastille">
+                        <div class="food--content">
+                            <div class="food--text">
+                                <h3>Bastille</h3>
+                                <p>New York</p>
+                            </div>
+                            <div class="food--heart-icon">
+                                <i class="far fa-heart heart-o"></i>
+                                <i class="fas fa-heart heart-f"></i>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="menu-4.html"><div class="food--card">
+                        <img src="images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" class="food--img" alt="Le Gourmand" title="Le Gourmand">
+                        <div class="food--content">
+                            <div class="food--text">
+                                <h3>Le Gourmand</h3>
+                                <p>New York</p>
+                            </div>
+                            <div class="food--heart-icon">
+                                <i class="far fa-heart heart-o"></i>
+                                <i class="fas fa-heart heart-f"></i>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </section>
+            <footer>
+                <div class="footer">
+                    <img src="images/ohmyfood@2x-white.png" class="footer--logo" alt="ohmyfood" title="ohmyfood">
+                    <ul class="footer--list1">
+                        <li><a href="#"><i class="fa-solid fa-utensils"></i></a></li>
+                        <li><a href="#">Suggest a restaurant</a></li>
+                    </ul>
+                    <ul class="footer--list2">
+                        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i></a></li>
+                        <li><a href="#">Become a partner</a></li>
+                    </ul>
+                    <ul class="footer--list3">
+                        <li><a href="#">Legal</a></li>
+                        <li><a href="mailto:info@ohmyfood.com">Contact</a></li>
+                    </ul>
+                </div>
+            </footer>
         </div>
-
-        <section class="nav">
-            <h1>How it works</h1>
-            <div class="nav--container">
-                <div class="nav--btn">
-                    <p class="nav--number">1</p>
-                    <div class="nav--icon">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    <p class="nav--text">Choose a restaurant</p>
-                </div>
-                <div class='nav--btn'>
-                    <p class="nav--number">2</p>
-                    <div class="nav--icon">
-                        <i class="fa-solid fa-list"></i>
-                    </div>
-                    <p class="nav--text">Create your menu</p>
-                </div>
-                <div class='nav--btn'>
-                    <p class="nav--number">3</p>
-                    <div class="nav--icon">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <p class="nav--text">Go enjoy it at the restaurant</p>
-                </div>
-            </div>
-        </section>
-            
-        <section class="food">
-            <h1>Restaurants</h1>
-            <div class="food--container">
-                <a href="menu-1.html"><div class="food--card">
-                    <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="food--img" alt="The Full Palette" title="The Full Palette">
-                    <div class="food--content">
-                        <div class="food--text">
-                            <h3>The Full Palette</h3>
-                            <p>New York</p>
-                        </div>
-                        <div class="food--heart-icon">
-                            <i class="far fa-heart heart-o"></i>
-                            <i class="fas fa-heart heart-f"></i>
-                        </div>
-                    </div>
-                </div></a>
-                <a href="menu-2.html"><div class="food--card">
-                    <img src="images/stil-u2Lp8tXIcjw-unsplash.jpg" class="food--img" alt="The Enchanted Plate" title="The Enchanted Plate">
-                    <div class="food--content">
-                        <div class="food--text">
-                            <h3>The Enchanted Plate</h3>
-                            <p>New York</p>
-                        </div>
-                        <div class="food--heart-icon">
-                            <i class="far fa-heart heart-o"></i>
-                            <i class="fas fa-heart heart-f"></i>
-                        </div>
-                    </div>
-                </div></a>
-                <a href="menu-3.html"><div class="food--card">
-                    <img src="images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" class="food--img" alt="Bastille" title="Bastille">
-                    <div class="food--content">
-                        <div class="food--text">
-                            <h3>Bastille</h3>
-                            <p>New York</p>
-                        </div>
-                        <div class="food--heart-icon">
-                            <i class="far fa-heart heart-o"></i>
-                            <i class="fas fa-heart heart-f"></i>
-                        </div>
-                    </div>
-                </div></a>
-                <a href="menu-4.html"><div class="food--card">
-                    <img src="images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" class="food--img" alt="Le Gourmand" title="Le Gourmand">
-                    <div class="food--content">
-                        <div class="food--text">
-                            <h3>Le Gourmand</h3>
-                            <p>New York</p>
-                        </div>
-                        <div class="food--heart-icon">
-                            <i class="far fa-heart heart-o"></i>
-                            <i class="fas fa-heart heart-f"></i>
-                        </div>
-                    </div>
-                </div></a>
-            </div>
-        </section>
-        <footer>
-            <div class="footer">
-                <img src="images/ohmyfood@2x-white.png" class="footer--logo" alt="ohmyfood" title="ohmyfood">
-                <ul class="footer--list1">
-                    <li><a href="#"><i class="fa-solid fa-utensils"></i></a></li>
-                    <li><a href="#">Suggest a restaurant</a></li>
-                </ul>
-                <ul class="footer--list2">
-                    <li><a href="#"><i class="fa-solid fa-handshake-angle"></i></a></li>
-                    <li><a href="#">Become a partner</a></li>
-                </ul>
-                <ul class="footer--list3">
-                    <li><a href="#">Legal</a></li>
-                    <li><a href="mailto:info@ohmyfood.com">Contact</a></li>
-                </ul>
-            </div>
-        </footer>
     </body>

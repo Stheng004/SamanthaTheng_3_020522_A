@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main/main.scss:.css/main/style.css",
+    "sass": "sass --watch ./sass/main/main.scss:./css/main/style.css",
     "prefix": "postcss ./css/main/style.css --use autoprefixer -d ./css/main/prefixed",
     "sass": "sass --watch ./sass/menu-4/menu-4.scss:./css/menu-4/style.css",
     "prefix": "postcss ./css/menu-4/style.css --use autoprefixer -d ./css/menu-4/prefixed",

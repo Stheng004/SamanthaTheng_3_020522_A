@@ -63,8 +63,55 @@ $gradient: $secondary, $primary;
 }
 
 @keyframes fadein {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spinning-loader{
+	0%{
+        opacity: 1;
+		transform: rotate(0deg);
+	}
+	60%{
+		transform: rotate(360deg);
+	}
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+.pre-loader-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.pre-loader{
+    margin-top: 20%;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 10px solid white;
+	border-top: 10px solid $tertiary;
+	animation: spinning-loader 3s linear;
+    position: fixed;
+    z-index: 2;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    @include mobile-only {
+        margin-top: 60%;
+    }
+}
+
+.loading-content {
+    animation: fadein 5s;
 }
 
 .omf-logo {
@@ -375,3 +422,5 @@ $gradient: $secondary, $primary;
     text-decoration: none;
     color: white;
 }
+
+  
